@@ -1,0 +1,21 @@
+<ion-view view-title="RWA" cache-view="false">
+  <ion-content>
+
+  <div style="border:1px solid black;" class="list card" 
+  	ng-repeat="data in RWA | orderBy:'data.ID' : true " >
+		 <div class="item item-avatar" style="background: #EB3C02;border-left: 4px solid #55657f;">
+		    <img src="{{data.imageUrl}}">
+		    <h3 class="texttitle">{{data.post_title}}</h3>
+		    <p style="color:white;">{{data.designation}}</p>
+		  </div>
+
+		 <!--  <show-more  style="margin: 5px !important; " text="data.post_content | htmlToPlaintext" limit="200" class="card postcard" > 
+  		  </show-more> -->
+	<p class=" postcard" read-more="data.post_content"  read-more-limit="200"
+     read-more-label-expand="More" read-more-label-collapse="Less">
+   </p>
+</div>
+
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,51 @@
+<ion-view view-title="Connect With RWA" cache-view="false">
+  <ion-content >
+
+    <form ng-submit="connectRwa()" name="Connectrwa" novalidate>
+          <div class="list" style="margin-top:10%;">
+              <label class="item item-input inputbox">
+                <span class="input-label">Name</span>
+                <input type="text" ng-model="rwa.name"  required>
+              </label>
+
+              <label class="item item-input inputbox">
+                <span class="input-label">Email</span>
+                <input type="text" ng-model="rwa.email"  required>
+              </label>
+
+               <label class="item item-input inputbox">
+                <span class="input-label">Phone No</span>
+                <input numbers type="text" ng-model="rwa.phone"  required>
+              </label>
+
+              <label class="item item-input inputbox">
+                <span class="input-label">Address</span>
+                <input type="text" ng-model="rwa.address"  required>
+              </label>
+
+              <!-- <label class="item item-input inputbox">
+                <span class="input-label">Subject</span>
+                <input type="text" ng-model="rwa.subject"  required>
+              </label> -->
+
+               <label class="item item-input item-select inputbox" >
+                  <div class="input-label">Select Category</div>
+                    <select ng-model="rwa.subject" name="tower" style="padding: 0 48px 0 0px !important;"
+                     ng-change="changedept(complain.department)" required>
+                        <option>Feedback/Suggestion</option>
+                        <option>Others</option>
+                    </select>
+              </label>
+
+               <label class="item item-input item-stacked-label inputbox">
+                <textarea placeholder="Message" rows="8" cols="10"  ng-model="rwa.message" required>
+                </textarea>
+              </label>
+
+
+            <button  ng-disabled="Connectrwa.$invalid" style="background-color: #EB3C02;color:white;width: 40%;margin-left: 30%;" class="button button-small " type="submit">Submit</button>
+        </div>
+      </form>
+
+  </ion-content>
+</ion-view>

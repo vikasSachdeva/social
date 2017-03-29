@@ -1,0 +1,47 @@
+<ion-view view-title="Directory" cache-view="false">
+ <ion-header-bar class="bar-light bar-subheader">
+		  <label class="item item-input" style="width: 100%;">
+		    <i class="icon ion-search placeholder-icon"></i>
+		    <input type="text" placeholder="Search" ng-model="search">
+		  </label>
+  </ion-header-bar>
+
+  <ion-content>
+ 		<!-- <ion-scroll direction="x" class="item wide-item" style="padding:0px !important;overflow-x: hidden !important;">
+            <div ng-repeat="data in towers" class="item"  style='display: inline-block; margin: 5px; width:100px; height:40px' ng-click="getTower(data.name)">
+            <p style="text-align: center;">Tower: {{data.name}}</p>
+            </div>
+        </ion-scroll> -->
+    <div>
+      <div class="row">
+          	<div class="col"><p style="color: #eb3c02;font-size: 15px;text-align: center;">Tower:</div>
+          	
+            <div class="col" ng-click="getTower('All')" style="margin-right: 1%;background: #eb3c02;color: white;font-weight: 600;"><p style="opacity:0.3;margin: 4px 0px 0px 4px !important;font-size: 15px;text-align: center;"
+              ng-class="{true:'directory'}['All' === dname]" ng-click="checkdirectory('All')">All</div>
+
+          	<div class="col" style="margin-right: 1%;background: #eb3c02;color: white;font-weight: 600;" ng-repeat="data in AppData.societyTower" class="item" ng-click="getTower(data.name)">
+          		<p style="opacity:0.3;margin: 4px 0px 0px 4px !important;font-size: 15px;text-align: center;"
+              ng-class="{true:'directory'}[data.name === dname]" ng-click="checkdirectory(data.name)">
+              {{data.name}}</p>
+          	</div>
+        </div>
+          <div class="row">
+                  <button class="button button-small gradeiant" style="padding: 4px;margin: 2% 2% 0% 13%;color: white;font-weight: 700;" ng-click="neighbour()">Know Your Neighbours</button>
+
+                <button class="button button-small gradeiant" style="padding: 4px;margin: 2% 2% 0% 10%;color: white;font-weight: 700;" ng-click="toggle = !toggle">Show/Hide Pics</button>
+          </div>
+      </div>
+
+
+  	<div class="list " >
+    		<a class="item item-avatar card" ng-repeat="user in users | orderBy:'firstname' | filter:search || {Tower: towername,flor:nfloor}: true">
+    		    <img src="{{user.imgurl}}" ng-show="toggle">
+    		    <h2>{{user.firstname}} {{user.last_name}}</h2>
+    		    <p>{{user.user_email}}</p>
+            <p style="display:inline;">{{user.Tower}}{{user.flor}}0{{user.Flatno}}</p>
+    		    <p style="display:inline;margin-right: 25px;">Extension: {{user.extension}}</p>
+    		    <p style="text-align: right;display:inline;">{{user.rtype}}</p>
+    		</a>
+	</div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,16 @@
+<ion-view view-title="Forums" cache-view="false">
+  <ion-content>
+
+	  <div class="list" >
+	  <div ng-repeat="Catdata in Category" ui-sref="app.forums({data:Catdata})">
+	  	<a class="item item-thumbnail-left">
+	      <img src="{{Catdata.image}}" >
+	      <h2 style="text-transform: uppercase;"><b>{{Catdata.cat_name}}</b></h2>
+	      <p><b>Count:</b> {{Catdata.count}}</p>
+	    </a>
+	  </div>
+	   
+	  </div>
+
+  </ion-content>
+</ion-view>

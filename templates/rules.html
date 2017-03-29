@@ -1,0 +1,20 @@
+<ion-view view-title="Rules" cache-view="false">
+  <ion-content>
+
+  <div style="border:1px solid black;" class="card" ng-repeat="data in rules | orderBy:'data.post_date':true">
+	  <div class="item item-divider" style="background: #EB3C02;border-left: 4px solid #55657f;
+    padding-top: 5px;padding-bottom: 5px;">
+	  	<h3 class="texttitle">{{data.post_title}}</h3>
+	    <p style="color:white;font-size: small;font-weight: 500;"> 
+      <i class="icon ion-clock" style="color: white;margin-right: 5px;"></i>{{data.post_date}}</p>
+	  </div>
+    <!--  <show-more style="margin: 5px !important; " text="data.post_content | htmlToPlaintext" limit="300" class="card postcard" > 
+   	 </show-more> -->
+   	 	<p class=" postcard" read-more="data.post_content"  read-more-limit="200"
+     read-more-label-expand="More" read-more-label-collapse="Less">
+   </p>
+</div>
+
+ 
+  </ion-content>
+</ion-view>

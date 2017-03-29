@@ -1,0 +1,321 @@
+/* Empty. Add your own CSS if you like */
+
+
+
+p{
+      white-space: normal !important;
+}
+
+
+.splashBack{
+  background: url(../img/splash_Black.png) no-repeat ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-color: black;
+  height:100%;
+  width:100%;
+}
+.gradeiant{
+  background: -webkit-linear-gradient(top, #FF6A06, #EB3C02); 
+  background: -o-linear-gradient(bottom, #FF6A06, #EB3C02); 
+  background: -moz-linear-gradient(bottom, #FF6A06, #EB3C02);
+  background: linear-gradient(to bottom, #FF6A06, #EB3C02);
+}
+.tranding{
+  background: url(../img/treanding.png) no-repeat ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-color: black;
+  height:100%;
+  width:100%;
+} 
+
+.recent{
+  background: url(../img/recent.png) no-repeat ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-color: black;
+  height:100%;
+  width:100%;
+  background-position-y: -25px;
+}
+
+.rwaclass{
+  background: url(../img/announcement.png) no-repeat ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-color: black;
+  height:100%;
+  width:100%;
+  background-position-y: -25px;
+}
+
+.promotionclass{
+  background: url(../img/promotion.png) no-repeat ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-color: black;
+  height:100%;
+  width:100%;
+}
+
+
+.noticeclass{
+  background: url(../img/notice.png) no-repeat ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-color: black;
+  height:100%;
+  width:100%;
+  background-position-y: -25px;
+}
+
+.mainbg{
+  background: url(../img/loginbg.png) no-repeat ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-color: black;
+  height:100%;
+  width:100%;
+}
+
+.registerbg{
+  background: url(../img/registerbg.png) no-repeat ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-color: black;
+  height:100%;
+  width:100%;
+}
+
+.directory{
+  opacity:1 !important;
+}
+
+
+.spinner22 svg {
+    width: 50px ;
+    height: 50px;
+    margin-top: 50px;
+}
+
+
+
+.texttitle{
+    font-style: italic;
+    font-weight: 700 ;
+    font-family: 'Open Sans', Tahoma, Verdana, sans-serif;
+    white-space: normal  !important;
+    color: white  !important;
+}
+.textfont{
+        font-style: italic;
+      font-weight: 700 ;
+      font-family: 'Open Sans', Tahoma, Verdana, sans-serif;
+}
+
+.button.disabled, .button[disabled] {
+    opacity: 0.7 !important;
+}
+
+.addpilotformimage{
+  width: 30%;height: 100px;margin-left: 35%;border: 1px solid white;
+border-radius: 50%;
+}
+
+.inputbox{
+	margin:5%;
+}
+
+.validation{
+  color: red;
+  margin-right: 10%;
+  font-size: medium;
+}
+
+.category{
+border: 4px solid blue;
+opacity:0.4;
+}
+
+.categoryforhome{
+border: 4px solid;
+opacity:1 !important;
+}
+
+
+.bar.bar-stable{
+  background: #EB3C02 !important;
+}
+
+.bar.bar-stable .title{
+  color:white !important;
+      font-style: italic !important;
+      font-weight: 700 !important;
+      font-family: 'Open Sans', Tahoma, Verdana, sans-serif !important;
+}
+
+
+.bar-stable .button.button-clear{
+	color:white;
+}
+
+/*In Forum Page Style*/
+.commentShareIcon{
+	font-size: 25px !important; 
+	margin-bottom: 3px !important;
+	color: #EB3C02;
+}
+
+.commentShareIconText{
+	display: block;
+	font-size: 10px;
+	color: #EB3C02;
+}
+
+/*In Forum Page Style End Here*/
+
+
+
+/*Single Post Comment page CSS*/
+.postcard{
+	    padding: 5px;
+	    background: white;
+	    color: #625959;
+	    font-size: small;
+	    font-weight: bold;
+      width: 100%;
+      margin: 5px !important;
+      white-space: normal;
+      min-height: 100px;
+}
+
+.forumcard{
+      padding: 5px;
+      background: white;
+      color: #625959;
+      font-size: small;
+      font-weight: bold;
+      width: 100%;
+      margin: 5px !important;
+      white-space: normal;
+}
+
+.commentedusername{
+		font-size: smaller;
+	    font-weight: bold;
+}
+
+.commentedtime{
+	font-size: smaller;
+}
+
+.commentedtext{
+	font-size: smaller;
+	white-space: normal;
+}
+
+/*End here*/
+
+
+/*User profile Css*/
+.profileimage{
+  max-height:100px;
+  margin-left: 35%;
+  border-radius: 50%;
+  width: 100px;
+  height:100px;
+  border :2px solid #EB3C02;
+}
+/*End here*/
+
+
+.ngtickerMessage > ul li {
+    display:initial;
+    position:absolute;
+    background-color:#444;
+    color:white;
+}
+
+.tickerImageColumn{
+  width: 32%;
+  
+/*  margin-top: 1%;*/
+  /*margin-left: -9px;*/
+  /*background: url(../img/newsticker.png) no-repeat;*/
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   background-size: 100%;
+ }
+
+
+ /*popup css*/
+
+ .popup-head {
+   padding: 3px 10px !important;
+   border-bottom: 1px solid #eee;
+   text-align: center;
+}
+
+.popup-buttons {
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.popup-buttons .button:last-child {
+    margin-right: 0px !important;
+    background: white !important;
+    color: black !important;
+}
+
+
+.popup-body{
+ color:white !important;
+}
+.popup-container .popup {
+
+    background: -webkit-linear-gradient(top, #FF6A06, #EB3C02) !important; 
+    background: -o-linear-gradient(bottom, #FF6A06, #EB3C02) !important; 
+    background: -moz-linear-gradient(bottom, #FF6A06, #EB3C02) !important;
+    background: linear-gradient(to bottom, #FF6A06, #EB3C02) !important;
+
+   /*background-color: black !important;*/
+   border:1px solid white !important;
+}
+
+.popup-container.active .popup{
+ border-radius: 10px;
+}
+.popup-title{
+ color:white !important;
+}
+
+#menurwa a{
+  background-color: #EB3C02 !important;
+  color:white !important;
+      font-weight: 700 !important;
+    font-family: 'Open Sans', Tahoma, Verdana, sans-serif !important;
+}
+
+#menuresident a{
+  background-color: #444444 !important;
+  color:white !important;
+      font-weight: 700 !important;
+    font-family: 'Open Sans', Tahoma, Verdana, sans-serif !important;
+
+}
+#menuresident{
+  background-color: #444444 !important;
+  color:white !important;
+      font-weight: 700 !important;
+    font-family: 'Open Sans', Tahoma, Verdana, sans-serif !important;
+
+}

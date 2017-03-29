@@ -1,0 +1,26 @@
+<ion-view view-title="Create Post" cache-view="false">
+  <ion-content>
+  	 	 <form ng-submit="Addpost()" name="createPostform" novalidate>
+	        <div class="list" style="margin-top:10%;">
+	            <label class="item item-input inputbox">
+	              <span class="input-label">Title</span>
+	              <input type="text" ng-model="createPost.title"  required>
+	            </label>
+
+	             <label class="item item-input item-select inputbox" >
+	                <div class="input-label">Select Category</div>
+	                  <select  ng-model="createPost.category" style=" text-transform: capitalize;" required>
+	                      <option ng-repeat="cat in Category" >{{cat.cat_name}}</option>
+	                  </select>
+            	</label>
+
+            	<label class="item item-input item-stacked-label inputbox">
+					<textarea placeholder="Enter Text" rows="8" cols="10"  ng-model="createPost.text" required>
+					</textarea>
+				</label>
+
+            <button  ng-disabled="createPostform.$invalid" style="background-color: #EB3C02;color:white;width: 40%;margin-left: 30%;" class="button button-small " type="submit">Create</button>
+        </div>
+      </form>
+  </ion-content>
+</ion-view>

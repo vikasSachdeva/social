@@ -1,0 +1,135 @@
+<ion-view cache-view="false" class="registerbg">
+  <ion-content >
+     <a class="button button-icon icon ion-arrow-left-a" style="color:white" ui-sref="login"></a>
+
+      <form ng-submit="doRegister()" name="RegisterForm" novalidate>
+        <div class="list" >
+            
+        <div style="margin-top:10px;">
+            <img class="addpilotformimage" ng-src="{{registerData.image}}" ng-click="showActionsheet()">
+            <p style="color:black;text-align:center;">Upload Picture</p>
+       </div>
+
+
+            <label class="item item-input inputbox" style="background: transparent;border-radius: 10px;">
+              <span class="input-label" style="color:white;">Your Login Name</span>
+              <span class="validation" ng-show="RegisterForm.username.$touched && RegisterForm.username.$error.required">*</span>
+              <input type="text" ng-model="registerData.username" style="color:white;" name="username" required>
+            </label>
+            
+
+
+            <label class="item item-input inputbox" style="background: transparent;border-radius: 10px;">
+              <span class="input-label" style="color:white;">Email</span>
+              <span class="validation " ng-show="RegisterForm.email.$touched && RegisterForm.email.$error.required">*</span>
+              <input type="email" style="color:white;" ng-model="registerData.email" name="email" required>    
+            </label>
+
+
+            <label class="item item-input inputbox" style="background: transparent;border-radius: 10px;">
+              <span class="input-label" style="color:white;">Password</span>
+              <span class="validation "  ng-show="RegisterForm.password.$touched && RegisterForm.password.$error.required">*</span>
+              <input type="password" style="color:white;" ng-model="registerData.password" name="password" required>      
+            </label>
+             
+           
+
+
+<!--             <label class="item item-input inputbox">
+              <span class="input-label">Confirm Password</span>
+              <span class="validation " ng-show="RegisterForm.cnfrmpassword.$touched && RegisterForm.cnfrmpassword.$error.required">*</span>
+              <input type="password" ng-model="registerData.cnfrmpassword" name="cnfrmpassword" required>
+            </label> -->
+
+
+            <label class="item item-input inputbox" style="background: transparent;border-radius: 10px;">
+              <span class="input-label" style="color:white;">First Name</span>
+              <span class="validation "  ng-show="RegisterForm.firstname.$touched && RegisterForm.firstname.$error.required">*</span>
+              <input type="text" style="color:white;" ng-model="registerData.firstname" name="firstname" required>   
+            </label>
+             
+
+
+            <label class="item item-input inputbox" style="background: transparent;border-radius: 10px;">
+              <span class="input-label" style="color:white;">Last Name</span>
+              <span class="validation "  ng-show="RegisterForm.lastname.$touched && RegisterForm.lastname.$error.required">*</span>
+              <input type="text" style="color:white;" ng-model="registerData.lastname" name="lastname" required>    
+            </label>
+             
+
+
+            <label class="item item-input item-select inputbox" style="background: transparent;border-radius: 10px;">
+                <div class="input-label" style="color:white;">Select Tower</div>
+                  <select  ng-model="registerData.tower" name="tower" required 
+                  style="background: transparent;color:white;">
+                      <option style="background: #a83d3d;" ng-repeat="tower in AppData.societyTower">{{tower.name}}</option>
+                  </select>
+                  <span class="validation " ng-show="RegisterForm.tower.$touched && RegisterForm.tower.$error.required">*</span>
+            </label>
+
+            <label class="item item-input item-select inputbox" style="background: transparent;border-radius: 10px;">
+                <div class="input-label" style="color:white;">Select Floor</div>
+                  <select  ng-model="registerData.floor" style="background: transparent;color:white;" name="floor" required>
+                      <option style="background: #a83d3d;" ng-repeat="floor in AppData.societyfloor" >{{floor.name}}</option>
+                  </select>
+                  <span class="validation " ng-show="RegisterForm.floor.$touched && RegisterForm.floor.$error.required">*</span>
+            </label>
+
+            <label class="item item-input item-select inputbox"  style="background: transparent;border-radius: 10px;">
+                <div class="input-label" style="color:white;">Select Flat</div>
+                  <select  style="background: transparent;color:white;" ng-model="registerData.flat" name="flat" required>
+                      <option style="background: #a83d3d;" ng-repeat="flat in AppData.societyflat" >{{flat.name}}</option>
+                  </select>
+                  <span class="validation " ng-show="RegisterForm.flat.$touched && RegisterForm.flat.$error.required">*</span>
+            </label>
+
+            <label class="item item-input item-select inputbox"  style="background: transparent;border-radius: 10px;" >
+                <div class="input-label" style="color:white;">Select Resident Type</div>
+                  <select  style="background: transparent;color:white;" ng-model="registerData.residenttype" name="residenttype" required>
+                      <option style="background: #a83d3d;" ng-repeat="residenttype in AppData.societyresidenttype" >{{residenttype.name}}</option>
+                  </select>
+                  <span class="validation " ng-show="RegisterForm.residenttype.$touched && RegisterForm.residenttype.$error.required">*</span>
+            </label>
+
+            <label class="item item-input item-select inputbox"  style="background: transparent;border-radius: 10px;">
+                <div class="input-label" style="color:white;">Select Profession</div>
+                  <select style="background: transparent;color:white;"  ng-model="registerData.profession" name="profession" required>
+                      <option style="background: #a83d3d;" ng-repeat="profession in AppData.societyprofession" >{{profession.name}}</option>
+                  </select>
+                  <span class="validation " ng-show="RegisterForm.profession.$touched && RegisterForm.profession.$error.required">*</span>
+            </label>
+
+            <label class="item item-input inputbox" style="background: transparent;border-radius: 10px;">
+              <span class="input-label" style="color:white;">Mobile Number</span>
+              <span class="validation " ng-show="RegisterForm.mobilenumber.$touched && RegisterForm.mobilenumber.$error.required">*</span>
+              <input numbers type="text" style="color:white;" ng-model="registerData.mobilenumber" name="mobilenumber" required>   
+            </label>
+
+
+            <label class="item item-input inputbox" style="background: transparent;border-radius: 10px;">
+              <span class="input-label" style="color:white;">Intercom Number</span>
+              <span class="validation " ng-show="RegisterForm.intercomnumber.$touched && RegisterForm.intercomnumber.$error.required">*</span>
+              <input numbers type="text" style="color:white;" ng-model="registerData.intercomnumber" name="intercomnumber" required> 
+            </label>
+
+            <div style="width:100%" >
+                <div style="width:30%;float:left;">
+                    <ion-checkbox style="margin-left: 20px;background: transparent;color: white;border: none;" ng-model="registerData.terms" required>
+                    </ion-checkbox>
+                </div>
+                <div style="width:60%;float:left;">
+                  <p style="color:white;text-align: center;border-bottom: 1px solid white;" ng-click="openBrowser()">
+                  I agree to terms & conditions<p> 
+                </div>
+            </div>
+            
+            <br><br>
+            <!-- <p style="" ng-click="modal.show()">I agree to terms & conditions<p> -->
+
+            <button  style="color:white;margin-left: 5%;width: 90%;border-color: white;border-radius: 10px;font-size: x-large;" ng-disabled="RegisterForm.$invalid" class="button button-clear" 
+              type="submit">Register</button>
+        </div>
+      </form>
+
+  </ion-content>
+</ion-view>

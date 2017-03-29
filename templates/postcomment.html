@@ -1,0 +1,38 @@
+<ion-view view-title="{{SinglePost.title}}" cache-view="false">
+
+
+  <ion-content ng-show="SinglePost">
+        
+        <div >
+          <p ng-if="SinglePost" class="card postcard" read-more="SinglePost.content"  read-more-limit="200"
+           read-more-label-expand="More" read-more-label-collapse="Less">
+         </p>
+        </div>
+
+ 	 <div class="list">
+		<a class="item item-avatar" ng-repeat="comment in SinglePost.comments | orderBy:'date' ">
+		    <img style="border: 2px solid #EB3C02;" src="img/default.png">
+		    <h2 style="font-size: smaller;font-weight: bold;" ng-if="comment.name">{{comment.name}}</h2>
+		    <h2 style="font-size: smaller;" ng-if="comment.date">{{comment.date || comment.date |  date:'yyyy-MM-dd HH:mm:ss'}}</h2>
+		    <p  style="font-size: smaller;" ng-if="comment.content"
+          ng-bind-html="comment.content | hrefToJS" ></p>
+
+        
+        <h2 style="font-size: smaller;font-weight: bold;" ng-if="comment.comment_author">{{comment.comment_author}}</h2>
+        <h2 style="font-size: smaller;" ng-if="comment.comment_date" >{{comment.comment_date |  date:'yyyy-MM-dd HH:mm:ss'}}</h2>
+        <p  style="font-size: smaller;" ng-if="comment.comment_content" 
+        ng-bind-html="comment.comment_content | hrefToJS"></p>
+		</a>
+	</div>
+  </ion-content>
+
+  <ion-footer-bar>
+  		<div class="item item-input-inset" style="width: 100%;">
+			<label class="item-input-wrapper" style="background:none">
+			    <input type="text" placeholder="Post Comment" ng-model="comment.value">
+			</label>
+			<button class="button"  ng-click="postComment()">Post</button>
+   	  </div>
+</ion-footer-bar>
+
+</ion-view>

@@ -1,0 +1,67 @@
+<ion-view view-title="Forums">
+
+<ion-content class="">
+  <div style="height:120px;margin-top:3%;">
+		<ks-swiper-container  initial-slide="3" speed="2000" loop="true" 
+			show-nav-buttons="false" slides-per-view="3" space-between="5" pagination-clickable="false" override-parameters="{effect: 'coverflow',coverflow: {rotate: 50,stretch: 0,depth: 100,modifier: 1,slideShadows : false}}">
+		    
+		  <ks-swiper-slide class="swiper-slide" ng-repeat="s in Category track by $index">
+		     <img style="border: 1px solid;" ng-src="{{s.image}}" ng-click="selectCategory(s)"
+          ng-class="{true:'category'}[s.cat_name === mname]" width="100%" > 
+          <p style="text-align:center;font-size: 10px;">{{s.cat_name | uppercase}}</p> 
+		  </ks-swiper-slide> 
+      
+		</ks-swiper-container>
+</div>
+
+<p style="text-align:center;color: #EB3C02;font-size: larger;font-weight: 700;margin-top: 5%;margin-bottom:0px">{{mname | uppercase}}</p>
+
+
+<ion-list ng-repeat = "post in posts track by $index" >
+    <div class="chat-item item-remove-animate  card dashcard" style="border:1px solid black;padding-top:0px !important;padding-bottom:0px !important;    margin: 10px 10px !important;" >
+      
+      <div class="item card-header" style="background: #EB3C02;border-left: 4px solid #55657f;
+           padding-top: 5px;padding-bottom: 5px;color: white;font-weight: 700;">
+
+      	<p class="texttitle">
+            {{post.title_plain}}</p>
+        <p style="color:white;font-size: small;font-weight: 500;display:inline;">
+           <i class="icon ion-clock" style="color: white;margin-right: 5px;"></i> {{post.date | date :'EEE, d MMM, y h:mm a'}}
+        </p>
+        <p style="text-transform: capitalize;display:inline;color:white;font-size: small;margin-left: 15%;font-weight: 500;text-align:right;">
+          {{post.author.name}}
+        </p>
+
+    </div>
+
+     
+  <p style="min-height: 100px;" class="postcard" read-more="post.content"  read-more-limit="200"
+     read-more-label-expand="More" read-more-label-collapse="Less">
+   </p>
+
+  <!--  <show-more  text="post.content | htmlToPlaintext | html " limit="200" class="forumcard" > 
+    </show-more> -->
+
+    <div class="row container-side-menu" style="border-top: 2px solid;text-align:center; padding:2px !important;margin-top: -5px;" >
+            
+            <a class="col subdued" ui-sref="app.postcomment({data:post})" style="line-height:12px;border-right: 1px solid;padding-top: 8px;"  ng-style="set_postdatefontcolor()">
+                  <i class="icon ion-chatbubbles commentShareIcon"></i>
+                  <span class="commentShareIconText"> {{post.comments.length}} Comment  </span>
+            </a>
+
+            <a class="col subdued" style="line-height:12px;padding-top: 8px !important;" 
+              ng-click="SocialSharing(post)">
+                  <i class="icon ion-android-share-alt commentShareIcon"></i>
+                  <span class="commentShareIconText">Share</span>
+            </a>
+
+        </div>
+      </div>
+    </ion-list>
+
+     <ion-infinite-scroll ng-if="!noMoreItemsAvailable" immediate-check='false' on-infinite="loadMore()" distance="10%">
+       
+     </ion-infinite-scroll>
+
+</ion-content>
+</ion-view>

@@ -1,0 +1,127 @@
+<ion-view view-title="Home">
+  <ion-content style="margin-bottom:3%">
+        <div style="height:120px;margin-top:5%;" ng-if="Category" >
+          <ks-swiper-container  initial-slide="3" speed="2000" loop="true" 
+            show-nav-buttons="false" slides-per-view="3" space-between="5" pagination-clickable="false" override-parameters="{effect: 'coverflow',coverflow: {rotate: 50,stretch: 0,depth: 100,modifier: 1,slideShadows : false}}">
+              
+            <ks-swiper-slide class="swiper-slide"  ng-repeat="Catdata in Category track by $index">
+               <img style="border: 1px solid;"  ng-src="{{Catdata.image}}" width="100%" ui-sref="app.forums({data:Catdata})">  
+               <p style="text-align:center;font-size: 10px;">{{Catdata.cat_name | uppercase}}</p>
+            </ks-swiper-slide> 
+
+          </ks-swiper-container>
+      </div>
+
+<!--  -->
+<div>
+  <div class="button-bar" style="margin-top: 5%;">
+
+
+          <a style="background: #eb3c02;opacity:0.4;min-height: 27px !important;    border: 4px solid;;color: white;font-weight: 600;"  class="button" ng-class="{true:'categoryforhome'}['RWA' === RNname]" 
+            ng-click="RwaORNotice('RWA')">RWA Alert
+          </a>
+          <a style="background: #eb3c02; opacity:0.4;   border: 4px solid;min-height: 27px !important;color: white;font-weight: 600;" class="button" ng-class="{true:'categoryforhome'}['Notices' === RNname]" 
+           ng-click="RwaORNotice('Notices')">Notices
+          </a>
+        </div>
+
+        
+
+
+      <div style="width:100%;" ng-show="rwaBox">
+          <div class="rwaclass"  ng-if="!announcement" style="height:150px;width: 96%;margin-left: 2%;">
+             <img src="img/loader.gif" style="height:50px;width:50px;margin-left:45%; margin-top: 50px;" />
+          </div>
+           <ul ticker class="rwaclass" ng-if="announcement" style="width: 96%;margin-left: 2%;">
+            <li ng-repeat="announc in announcement" class="item-{{$index}}" 
+               ui-sref="app.announcement({data:announcement})" style="color:white;">
+              <i class="icon ion-arrow-right-b" style="color:white;font-weight: 700;margin-right: 5px;"></i>
+               <b class="textfont" ng-bind-html="announc.post_title"></b>
+            </li>
+          </ul>
+      </div>
+
+
+       <div style="width:100%;" ng-show="noticeBox" >
+          <div class="noticeclass"  ng-if="!notices" style="height:150px;width: 96%;margin-left: 2%;">
+            <img src="img/loader.gif" style="height:50px;width:50px;margin-left:45%; margin-top: 50px;"/>
+          </div>
+           <ul ticker class="noticeclass" ng-if="notices" style="width: 96%;margin-left: 2%;">
+            <li ng-repeat="noticesitem in notices" class="item-{{$index}}" 
+               ui-sref="app.notices({data:notices})" style="color:white;">
+              <i class="icon ion-arrow-right-b" style="color:white;font-weight: 700;margin-right: 5px;"></i>
+              <b class="textfont" ng-bind-html="noticesitem.post_title"></b>
+            </li>
+          </ul>
+      </div>
+      </div>
+
+
+<div>
+      <div class="button-bar">
+
+          <a style="font-size: 12px;padding: 0px;background: #eb3c02;opacity:0.4;min-height: 27px !important;    border: 4px solid;;color: white;font-weight: 700;"  
+            class="button" ng-class="{true:'categoryforhome'}['Promotions' === TRname]" 
+            ng-click="trendORRecent('Promotions')">Promotions
+          </a>
+
+
+          <a style="font-size: 12px;padding: 0px;background: #eb3c02;min-height: 27px !important;
+            color: white;font-weight: 700;opacity:0.4;border: 4px solid;" class="button" 
+            ng-class="{true:'categoryforhome'}['Trending' === TRname]" ng-click="trendORRecent('Trending')">
+            Trending Topics
+          </a>
+
+          <a style="font-size: 12px;padding: 0px;background: #eb3c02;opacity:0.4;border: 4px solid;min-height: 27px !important;color: white;font-weight: 700;" class="button" ng-class="{true:'categoryforhome'}['Recent' === TRname]" 
+            ng-click="trendORRecent('Recent')">Recent Topics
+          </a>
+      </div>
+
+
+      <div style="width:100%;" ng-show="promotion">
+          <div class="promotionclass"  style="height:150px;width: 96%;margin-left: 2%;">
+          </div>  
+        </div>
+
+
+    <div style="width:100%;" ng-show="trandindBox">
+        
+        <div class="tranding" ng-if="!trandings" style="height:150px;width: 96%;margin-left: 2%;" >
+          <!-- <ion-spinner icon="ripple" style="margin-left: 45%;" class="spinner-assertive"></ion-spinner> -->
+          <img src="img/loader.gif" style="height:50px;width:50px;margin-left:45%; margin-top: 50px;" />
+        </div>
+
+         <ul ticker class="tranding" ng-if="trandings" style="width: 96%;margin-left: 2%;">
+          <li ng-repeat="item in trandings" class="item-{{$index}}" 
+             ui-sref="app.postcomment({data:item})" style="color:white;">
+            <i class="icon ion-arrow-right-b" style="font-weight: 700;margin-right: 5px;"></i>
+            <!-- <b class="textfont">{{item.title}}</b> -->
+            <b class="textfont" ng-bind-html="item.post_title"></b>
+          </li>
+        </ul>
+    </div>
+
+
+       <div style="width:100%;" ng-show="recentBox">
+
+            <div class="recent"  ng-if="!recent" style="height:150px;width: 96%;margin-left: 2%;">
+              <!-- <ion-spinner icon="ripple" style="margin-left: 45%;" class="spinner-assertive"></ion-spinner> -->
+              <img src="img/loader.gif" style="height:50px;width:50px;margin-left:45%; margin-top: 50px;" />
+            </div>
+
+             <ul ticker class="recent" ng-if="recent" style="width: 96%;margin-left: 2%;">
+              <li ng-repeat="recentitem in recent" class="item-{{$index}}" 
+                 ui-sref="app.postcomment({data:recentitem})" style="color:white;">
+                <i class="icon ion-arrow-right-b" style="color:white;font-weight: 700;margin-right: 5px;"></i>
+                <!-- <b class="textfont">{{recentitem.title}}</b> -->
+                <b class="textfont" ng-bind-html="recentitem.title" ></b>
+              </li>
+            </ul>
+
+        </div>
+</div>
+
+
+  </ion-content>
+
+</ion-view>
